@@ -36,7 +36,7 @@ looker.plugins.visualizations.add({
       seriesLabels.push(seriesLabel);
       categoricals.push(rec[0].value)
 
-      console.log(LookerCharts.Utils.htmlForCell(rec[1].value)
+      console.log(LookerCharts.Utils.htmlForCell(data[rowNum]))
 
       if (baseSeries[seriesLabel] == undefined) {
         baseSeries[seriesLabel] = [];
