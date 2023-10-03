@@ -1,12 +1,4 @@
-/**
- * Welcome to the Looker Custom Visualization Builder! Please refer to the following resources
- * to help you write your visualization:
- *  - API Documentation - https://github.com/looker/custom_visualizations_v2/blob/master/docs/api_reference.md
- *  - Example Visualizations - https://github.com/looker/custom_visualizations_v2/tree/master/src/examples
- *  - How to use the CVB - https://developers.looker.com/marketplace/tutorials/about-custom-viz-builder
- **/
-
-const visObject = {
+looker.plugins.visualizations.add({
 
  /**
   * Configuration options for your visualization. In Looker, these show up in the vis editor
@@ -20,7 +12,7 @@ const visObject = {
   * data is passed to it.
   **/
   create: function(element, config){
-    element.innerHTML = "<div style=\"display:block; height: 100%; width: 100%;\" id=\"container\"></div>";
+    // element.innerHTML = "<div style=\"display:block; height: 100%; width: 100%;\" id=\"road-map-container\"></div>";
   },
 
  /**
@@ -81,8 +73,6 @@ const visObject = {
     }
 
     var seriesLabels = seriesLabels.filter(onlyUnique);
-
-    console.log(baseSeries);
 
     for (const [id, label] of seriesLabels.entries()) {
       color = colors[id % colors.length];
@@ -155,7 +145,7 @@ const visObject = {
     }
 
 
-    Highcharts.chart('container', {
+    Highcharts.chart(element, {
       chart: {inverted: true},
       series: allSeries,
       accessibility: {
@@ -163,14 +153,7 @@ const visObject = {
       },
 
       legend: {
-        enabled: true,
-        // itemStyle: {
-        //   color: 'var(--vis-color-text4)',
-        //   fontWeight: 'normal',
-        // },
-        // navigation: {
-        //   activeColor: '#666666',
-        // },
+        enabled: true
       },
 
       plotOptions: {
@@ -234,9 +217,7 @@ const visObject = {
          }
     });
   }
-};
-
-looker.plugins.visualizations.add(visObject);
+});
 
 
 
