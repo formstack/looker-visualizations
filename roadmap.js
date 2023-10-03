@@ -36,14 +36,13 @@ looker.plugins.visualizations.add({
       seriesLabels.push(seriesLabel);
       categoricals.push(rec[0].value)
 
-      console.log(LookerCharts.Utils.htmlForCell(rec)
+      console.log(LookerCharts.Utils.htmlForCell(rec[1].value)
 
       if (baseSeries[seriesLabel] == undefined) {
         baseSeries[seriesLabel] = [];
       }
 
       baseSeries[seriesLabel].push({
-        //color: color,
         low: Date.parse(rec[2].value),
         high: Date.parse(rec[3].value),
         x: categoricals.length - 1,
@@ -218,7 +217,8 @@ looker.plugins.visualizations.add({
           }
          }
     });
-   doneRendering();
+    
+    doneRendering();
   }
 });
 
