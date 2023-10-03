@@ -1,5 +1,5 @@
 looker.plugins.visualizations.add({
-
+ console.log('v1');
  /**
   * Configuration options for your visualization. In Looker, these show up in the vis editor
   * panel but here, you can just manually set your default values in the code.
@@ -36,7 +36,7 @@ looker.plugins.visualizations.add({
       seriesLabels.push(seriesLabel);
       categoricals.push(rec[0].value)
 
-      console.log(LookerCharts.Utils.htmlForCell(data[rowNum]))
+      console.log(LookerCharts.Utils.htmlForCell(row[0].name)
 
       if (baseSeries[seriesLabel] == undefined) {
         baseSeries[seriesLabel] = [];
