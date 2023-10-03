@@ -1,5 +1,6 @@
-looker.plugins.visualizations.add({
  console.log('v1');
+looker.plugins.visualizations.add({
+
  /**
   * Configuration options for your visualization. In Looker, these show up in the vis editor
   * panel but here, you can just manually set your default values in the code.
